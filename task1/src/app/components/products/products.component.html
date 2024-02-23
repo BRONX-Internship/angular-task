@@ -1,0 +1,17 @@
+<div class="container mt-5">
+  <div class="" *ngIf="product">
+    <h1>Product Detail: {{ product.id }}</h1>
+    <h4>Product Detail: {{ product.name }}</h4>
+    <h4>Product Detail: {{ product.price }}</h4>
+    <div class="" style="border-bottom: 2px solid #bababa; margin-bottom: 2rem;"></div>
+  </div>
+
+  <div class="row mb-3">
+    <div class="col-md-3 mb-3" *ngFor="let product of products">
+      <app-card
+        [product]="product"
+        (passProduct)="getProduct($event)"
+      ></app-card>
+    </div>
+  </div>
+</div>

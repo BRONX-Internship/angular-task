@@ -1,0 +1,11 @@
+<div class="ad-banner-example">
+  <h2>Testing Dynamic Component:</h2>
+  <div
+    class=""
+    style="border-bottom: 2px solid black; margin-bottom: 2rem"
+  ></div>
+  <ng-container
+    *ngComponentOutlet="currentAd.component; inputs: currentAd.inputs"
+  />
+  <button (click)="displayNextAd()">Next</button>
+</div>

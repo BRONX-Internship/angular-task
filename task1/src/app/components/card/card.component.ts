@@ -1,4 +1,12 @@
-import { Component, OnDestroy, OnInit } from '@angular/core';
+import {
+  Component,
+  EventEmitter,
+  Input,
+  OnDestroy,
+  OnInit,
+  Output,
+} from '@angular/core';
+import { Product } from 'src/app/models/product.model';
 
 @Component({
   selector: 'app-card',
@@ -6,10 +14,17 @@ import { Component, OnDestroy, OnInit } from '@angular/core';
   styleUrls: ['./card.component.scss'],
 })
 export class CardComponent implements OnInit, OnDestroy {
+  @Input() product: Product | undefined;
+  @Output() passProduct: EventEmitter<Product> = new EventEmitter<Product>();
+
   constructor() {}
 
   ngOnInit(): void {
     console.log('On Init');
+  }
+
+  emitProduct() {
+    this.passProduct.emit(this.product);
   }
 
   ngOnDestroy(): void {

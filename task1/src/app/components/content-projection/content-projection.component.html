@@ -1,0 +1,26 @@
+<h2>Angular and Content Projection</h2>
+
+<app-zippy-basic>
+  <p>Is content projection cool?</p>
+</app-zippy-basic>
+
+<hr />
+
+<app-zippy-multislot>
+  <p question>Is content projection cool?</p>
+  <p>Let's learn about content projection!</p>
+</app-zippy-multislot>
+
+<hr />
+
+<h2>Here's a zippy</h2>
+
+<hr />
+
+<app-zippy-ngprojectas>
+  <p>Let's learn about content projection!</p>
+  <ng-container ngProjectAs="[question]">
+    <p>Is content projection cool?</p>
+    <h3>Hello</h3>
+  </ng-container>
+</app-zippy-ngprojectas>
